@@ -109,7 +109,7 @@ def list_user_categories(username:str):
 @cli.command()
 def assign_category_to_todo(username:str, todo_id:int, category_text:str):
     # Task 5.6 code here. Remove the line with "pass" below once completed
-        with get_session() as db: # Get a connection to the database
+    with get_session() as db: # Get a connection to the database
         user = db.exec(select(User).where(User.username == username)).one_or_none()
         if not user:
             print("User doesn't exist")
